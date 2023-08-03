@@ -22,7 +22,7 @@ To set up the ProximeterBackend on your local environment, follow these steps:
 
 ## Database
 
-The exported SQL file for the ProximeterBackend database is included as `Proximeter.postman_collection.json`. You can find the SQL file named `proximeter.sql` in the root folder of this repository.
+The exported SQL file for the ProximeterBackend database is included. You can find the SQL file named `proximeter.sql` in the root folder of this repository.
 
 ## Requirements
 
