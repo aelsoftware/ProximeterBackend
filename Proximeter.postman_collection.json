@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "1f684578-6df3-430a-accf-b3534ef702fa",
+		"name": "Proximeter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15792337",
+		"_collection_link": "https://davacademy.postman.co/workspace/localhost~a6c56d5b-874b-4619-8b0f-4ae46d392a5a/collection/15792337-1f684578-6df3-430a-accf-b3534ef702fa?action=share&creator=15792337&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test User\",\r\n    \"email\":\"user2@test.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test User\",\r\n    \"email\":\"user@test.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoggedIn User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Measurements",
+			"item": [
+				{
+					"name": "All Measurements",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/measurements",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"measurements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Measurement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test acre\",\r\n    \"area\":25000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/measurement",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"measurement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Measurment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":9,\r\n    \"name\":\"Updated name 8\",\r\n    \"area\": 280\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/measurements/9/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"measurements",
+								"9",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Measurement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/measurements/12",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"measurements",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "2|nkprnuBFtZRvRcrLah0ShljMPXdHUjKiuhXlVsFQ",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "2|nkprnuBFtZRvRcrLah0ShljMPXdHUjKiuhXlVsFQ",
+			"type": "string"
+		}
+	]
+}
